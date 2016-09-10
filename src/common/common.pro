@@ -6,13 +6,17 @@
 
 TARGET = common
 TEMPLATE = lib
+QT += concurrent
+CONFIG += c++14
 
 DEFINES += COMMON_LIBRARY
 
-SOURCES += CannyDetection.cpp
+SOURCES += CannyDetection.cpp \
+    ImagePixelIterator.cpp
 
 HEADERS += CannyDetection.h\
-        common_global.h
+        common_global.h \
+    ImagePixelIterator.h
 
 unix {
     target.path = /usr/lib
