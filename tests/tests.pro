@@ -4,16 +4,17 @@
 #
 #-------------------------------------------------
 
-QT       += testlib
 
 TARGET = tst_cannytest
-CONFIG   += console
+CONFIG   += console c++14
 CONFIG   -= app_bundle
 
+QT       += testlib
 TEMPLATE = app
 
 
-SOURCES +=
+SOURCES += \
+    tst_image_iterator.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 unix|win32: LIBS += -L$$OUT_PWD/../src/common/ -lcommon
