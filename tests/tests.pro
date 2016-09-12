@@ -9,7 +9,7 @@ TARGET = tst_cannytest
 CONFIG   += console c++14
 CONFIG   -= app_bundle
 
-QT       += testlib
+QT       += testlib concurrent
 TEMPLATE = app
 
 
