@@ -1,11 +1,20 @@
 #ifndef IMAGEPIXELITERATOR_H
 #define IMAGEPIXELITERATOR_H
 
+#include <iterator>
 #include <QImage>
+#include "common_global.h"
 
-class ImagePixelIterator
+class COMMONSHARED_EXPORT ImagePixelIterator
 {
 public:
+    typedef ImagePixelIterator self_type;
+    typedef QRgb value_type;
+    typedef QRgb& reference;
+    typedef QRgb* pointer;
+    typedef size_t difference_type;
+    typedef std::random_access_iterator_tag iterator_category;
+
     ImagePixelIterator(const QImage *image);
 
     ImagePixelIterator &operator ++ ();
