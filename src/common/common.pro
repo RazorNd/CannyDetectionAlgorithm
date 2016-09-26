@@ -12,11 +12,12 @@ CONFIG += c++14
 DEFINES += COMMON_LIBRARY
 
 SOURCES += CannyDetection.cpp \
-    ImagePixelIterator.cpp
+    ImagePixelIterator.cpp \
 
 HEADERS += CannyDetection.h\
         common_global.h \
-    ImagePixelIterator.h
+    ImagePixelIterator.h \
+    RangeIterator.h
 
 unix {
     target.path = /usr/lib
