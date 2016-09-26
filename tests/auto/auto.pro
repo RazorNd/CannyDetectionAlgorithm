@@ -1,3 +1,4 @@
 TEMPLATE = subdirs
 
-SUBDIRS = ImagePixelIterator
+SUBDIRS = ImagePixelIterator \
+    RangeIterator
