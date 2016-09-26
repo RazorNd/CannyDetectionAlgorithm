@@ -15,9 +15,8 @@ TEMPLATE = app
 
 SOURCES += \
     tst_image_iterator.cpp
-DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
-unix|win32: LIBS += -L$$OUT_PWD/../src/common/ -lcommon
+unix|win32: LIBS += -L$$OUT_PWD/../../../src/common/ -lcommon
 
-INCLUDEPATH += $$PWD/../src/common
-DEPENDPATH += $$PWD/../src/common
+INCLUDEPATH += $$PWD/../../../src/common
+DEPENDPATH += PWD/../../../src/common
