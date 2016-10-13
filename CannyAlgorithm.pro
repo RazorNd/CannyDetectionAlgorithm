@@ -2,4 +2,5 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     src/common \
-    tests
+    tests \
+    Simple
