@@ -3,6 +3,6 @@ TEMPLATE = subdirs
 SUBDIRS += \
     src/common \
     src/CannyQtWrapper \
-    Simple \
+    src/Simple \
     tests \
 
