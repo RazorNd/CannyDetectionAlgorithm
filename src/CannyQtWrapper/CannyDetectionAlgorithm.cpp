@@ -3,11 +3,13 @@
 CannyDetectionAlgorithm::CannyDetectionAlgorithm(QObject *parent) :
     QObject(parent)
 {
+    setConnection();
 }
 
 CannyDetectionAlgorithm::CannyDetectionAlgorithm(int tMin, int tMax, double sigma, QObject *parent) :
     QObject (parent), canny(tMin, tMax, sigma)
 {
+    setConnection();
 }
 
 int CannyDetectionAlgorithm::getTMin() const
@@ -53,6 +55,14 @@ void CannyDetectionAlgorithm::setSigma(double value)
 {
     canny.setSigma(value);
     emit sigmaChanged(getSigma());
+}
+
+void CannyDetectionAlgorithm::setConnection()
+{
+    connect(this, &CannyDetectionAlgorithm::inputImageChanged, &CannyDetectionAlgorithm::recalculate);
+    connect(this, &CannyDetectionAlgorithm::tMinChanged, &CannyDetectionAlgorithm::recalculate);
+    connect(this, &CannyDetectionAlgorithm::tMaxChanged, &CannyDetectionAlgorithm::recalculate);
+    connect(this, &CannyDetectionAlgorithm::sigmaChanged, &CannyDetectionAlgorithm::recalculate);
 }
 
 QImage CannyDetectionAlgorithm::getOutput() const

@@ -12,7 +12,7 @@ class CANNYQTWRAPPERSHARED_EXPORT CannyDetectionAlgorithm : public QObject
 public:
     Q_PROPERTY(int tMin READ getTMin WRITE setTMin NOTIFY tMinChanged)
     Q_PROPERTY(int tMax READ getTMax WRITE setTMax NOTIFY tMaxChanged)
-    Q_PROPERTY(double sigma READ setSigma WRITE setSigma NOTIFY sigmaChanged)
+    Q_PROPERTY(double sigma READ getSigma WRITE setSigma NOTIFY sigmaChanged)
 
     explicit CannyDetectionAlgorithm(QObject *parent = 0);
     explicit CannyDetectionAlgorithm(int tMin, int tMax, double sigma, QObject *parent = 0);
@@ -41,6 +41,8 @@ private:
     QImage input;
     QImage output;
     CannyDetection canny;
+
+    void setConnection();
 };
 
 #endif // CANNYDETECTIONALGORITHM_H
