@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Canny Detection Algorithm</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="2" column="0">
@@ -146,11 +146,25 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>save</sender>
+   <signal>clicked()</signal>
+   <receiver>CannyWidget</receiver>
+   <slot>saveOutputImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>631</x>
+     <y>434</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>629</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>loadInputImage()</slot>
-  <slot>setTMin(int)</slot>
-  <slot>setTMax(int)</slot>
-  <slot>setSigma(double)</slot>
+  <slot>saveOutputImage()</slot>
  </slots>
 </ui>
