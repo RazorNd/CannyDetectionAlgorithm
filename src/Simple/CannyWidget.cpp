@@ -37,6 +37,8 @@ CannyWidget::CannyWidget(QWidget *parent) :
 CannyWidget::~CannyWidget()
 {
     delete ui;
+    cannyCalculateThread.quit();
+    cannyCalculateThread.wait();
 }
 
 void CannyWidget::loadInputImage()
