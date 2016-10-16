@@ -19,6 +19,7 @@ public:
 
 public slots:
     void loadInputImage();
+    void saveOutputImage();
 
 protected slots:
     void setOutputImage(QImage image);

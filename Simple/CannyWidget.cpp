@@ -54,6 +54,16 @@ void CannyWidget::loadInputImage()
     }
 }
 
+void CannyWidget::saveOutputImage()
+{
+    QString fileName = QFileDialog::getSaveFileName(this, "Файл для сохранения", QString(), "Изображения (*.png *.bmp *.jpg)");
+    if (fileName.isEmpty())
+    {
+        return;
+    }
+    outputItem->pixmap().save(fileName, 0, 100);
+}
+
 
 void CannyWidget::setOutputImage(QImage image)
 {
