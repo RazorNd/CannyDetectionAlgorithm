@@ -11,7 +11,7 @@
 git clone https://github.com/RazorNd/CannyDetectionAlgorithm.git
 ```
 
-Или перейдите в раздел [Релизы]() и скачайте актуальную версию исходных кодов.
+Или перейдите в раздел [Релизы](https://github.com/RazorNd/CannyDetectionAlgorithm/releases) и скачайте актуальную версию исходных кодов.
 
 # Требования
 
