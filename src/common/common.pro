@@ -14,8 +14,7 @@ DEFINES += COMMON_LIBRARY
 SOURCES += CannyDetection.cpp \
     ImagePixelIterator.cpp \
     PixelsMatrix.cpp \
-    SobelOperator.cpp \
-    RobinsonOperator.cpp
+    SobelOperator.cpp    
 
 HEADERS += CannyDetection.h\
         common_global.h \
@@ -23,8 +22,8 @@ HEADERS += CannyDetection.h\
     PixelsMatrix.h \
     util.h \
     SupressOperator.h \
-    SobelOperator.h \
-    RobinsonOperator.h
+    SobelOperator.h
+    
 
 unix {
     target.path = /usr/lib
