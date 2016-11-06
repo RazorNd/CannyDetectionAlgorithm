@@ -14,7 +14,8 @@ DEFINES += COMMON_LIBRARY
 SOURCES += CannyDetection.cpp \
     ImagePixelIterator.cpp \
     PixelsMatrix.cpp \
-    SobelOperator.cpp    
+    SobelOperator.cpp \
+    RobinsonOperator.cpp
 
 HEADERS += CannyDetection.h\
         common_global.h \
@@ -22,7 +23,8 @@ HEADERS += CannyDetection.h\
     PixelsMatrix.h \
     util.h \
     SupressOperator.h \
-    SobelOperator.h
+    SobelOperator.h \
+    RobinsonOperator.h
     
 
 unix {
