@@ -53,10 +53,10 @@ QImage CannyDetection::operator()(const QImage &image) const
     std::vector<int> edges(size);
     std::fill(edges.begin(), edges.end(), 0);
 
-    PixelsMatrix out(in.size);
-    int c = 1;
+    PixelsMatrix out(in.size);    
     for (int j = 1; j < ny - 1; j++)
         for (int i = 1; i < nx - 1; i++) {
+            const int c = i + nx * j;
             if (nms[c] >= tMax && out[c] == 0) { // trace edges
                 out[c] = PixelsMatrix::MAX_BRIGHTNESS;
                 size_t nedges = 1;
@@ -84,7 +84,7 @@ QImage CannyDetection::operator()(const QImage &image) const
                         }
                 } while (nedges > 0);
             }
-            c++;
+
         }
 
     return out.toImage();
