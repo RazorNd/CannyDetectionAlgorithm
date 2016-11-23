@@ -6,7 +6,7 @@
 class SupressOperator
 {
 public:
-    virtual ~SupressOperator() {}
+    virtual ~SupressOperator() = default;
     virtual PixelsMatrix operator() (const PixelsMatrix &in) const = 0;
 };
 
