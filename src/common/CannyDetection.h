@@ -3,7 +3,7 @@
 
 #include "common_global.h"
 #include "SupressOperator.h"
-#include "SobelOperator.h"
+#include "RobinsonOperator.h"
 #include <functional>
 #include <QImage>
 
@@ -31,7 +31,7 @@ private:
     double sigma = 1.0;
     int tMin = 45;
     int tMax = 50;
-    SupressOperatorType supressOperator = SobelOperator();
+    SupressOperatorType supressOperator = RobinsonOperator();
 };
 
 #endif // CANNYDETECTION_H

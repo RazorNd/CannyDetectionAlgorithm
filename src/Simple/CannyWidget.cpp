@@ -23,6 +23,7 @@ CannyWidget::CannyWidget(QWidget *parent) :
     connect(ui->tMin, SIGNAL(valueChanged(int)), algorithm, SLOT(setTMin(int)));
     connect(ui->tMax, SIGNAL(valueChanged(int)), algorithm, SLOT(setTMax(int)));
     connect(ui->sigma, SIGNAL(valueChanged(double)), algorithm, SLOT(setSigma(double)));
+    connect(ui->supressOperator, SIGNAL(currentIndexChanged(int)), algorithm, SLOT(setSupressOperator(int)));
     connect(algorithm, &CannyDetectionAlgorithm::outputImageChanged, this, &CannyWidget::setOutputImage);
 
     ui->input->setScene(inputScene);
