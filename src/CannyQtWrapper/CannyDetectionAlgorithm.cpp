@@ -1,5 +1,4 @@
 #include "CannyDetectionAlgorithm.h"
-#include <QDebug>
 
 CannyDetectionAlgorithm::CannyDetectionAlgorithm(QObject *parent) :
     QObject(parent)
@@ -67,8 +66,7 @@ void CannyDetectionAlgorithm::setSigma(double value)
 
 void CannyDetectionAlgorithm::setSupressOperator(int supressOperatorNumber)
 {
-    auto tmp = std::move(suppressOperators[supressOperatorNumber]);
-    qDebug() << tmp.target<PixelsMatrix (const PixelsMatrix &in)>();
+    auto tmp = std::move(suppressOperators[supressOperatorNumber]);    
     canny.setSupressOperator(std::move(tmp));
     suppressOperators[currentSuppressOperatorNumber()] = std::move(tmp);
     setCurrentSupressOperatorNumber(supressOperatorNumber);
