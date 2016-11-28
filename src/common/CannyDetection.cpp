@@ -92,5 +92,5 @@ QImage CannyDetection::operator()(const QImage &image) const
 
 void CannyDetection::setSupressOperator(SupressOperatorType &&value)
 {
-    supressOperator = std::move(value);
+    supressOperator.swap(value);
 }
