@@ -3,6 +3,9 @@
 
 Это программа детектирующая границы в изображении с помощью [алгоритма Кенни](https://ru.wikipedia.org/wiki/%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80_%D0%9A%D1%8D%D0%BD%D0%BD%D0%B8).
 
+[![Build Status](https://travis-ci.org/RazorNd/CannyDetectionAlgorithm.svg?branch=master)](https://travis-ci.org/RazorNd/CannyDetectionAlgorithm)
+[![GitHub release](https://img.shields.io/github/release/RazorNd/CannyDetectionAlgorithm.svg)](https://github.com/RazorNd/CannyDetectionAlgorithm/releases)
+[![license](https://img.shields.io/github/license/RazorNd/CannyDetectionAlgorithm.svg)](https://github.com/RazorNd/CannyDetectionAlgorithm/blob/master/LICENSE)
 [![Created by RazorNd](https://img.shields.io/badge/Created%20by-RazorNd-orange.svg)](https://github.com/RazorNd)
 
 # Структура и алгоритм
