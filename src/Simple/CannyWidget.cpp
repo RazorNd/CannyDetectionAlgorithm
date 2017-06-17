@@ -25,12 +25,14 @@ CannyWidget::CannyWidget(QWidget *parent) :
     connect(ui->sigma, SIGNAL(valueChanged(double)), algorithm, SLOT(setSigma(double)));
     connect(ui->supressOperator, SIGNAL(currentIndexChanged(int)), algorithm, SLOT(setSupressOperator(int)));
     connect(algorithm, &CannyDetectionAlgorithm::outputImageChanged, this, &CannyWidget::setOutputImage);
+    connect(&cannyCalculateThread, &QThread::finished, algorithm, &QObject::deleteLater);
+
 
     ui->input->setScene(inputScene);
     ui->output->setScene(outputScene);
 
-    inputItem = inputScene->addPixmap(QPixmap());
-    outputItem = outputScene->addPixmap(QPixmap());
+    inputScene->addItem(inputItem = new QGraphicsPixmapItem());
+    outputScene->addItem(outputItem = new QGraphicsPixmapItem());
 
     cannyCalculateThread.start();
 }
