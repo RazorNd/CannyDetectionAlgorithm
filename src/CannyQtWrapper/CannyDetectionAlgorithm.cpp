@@ -3,15 +3,15 @@
 CannyDetectionAlgorithm::CannyDetectionAlgorithm(QObject *parent) :
     QObject(parent)
 {
-    setConnection();
     setSupressOperator(0);
+    setConnection();
 }
 
 CannyDetectionAlgorithm::CannyDetectionAlgorithm(int tMin, int tMax, double sigma, QObject *parent) :
     QObject (parent), canny(tMin, tMax, sigma)
 {
-    setConnection();
     setSupressOperator(0);
+    setConnection();
 }
 
 int CannyDetectionAlgorithm::getTMin() const
@@ -48,7 +48,7 @@ int CannyDetectionAlgorithm::currentSuppressOperatorNumber() const
 
 void CannyDetectionAlgorithm::recalculate()
 {
-    output = canny(input);
+    output = canny(input);    
     emit outputImageChanged(output);
 }
 
@@ -80,11 +80,11 @@ void CannyDetectionAlgorithm::setCurrentSupressOperatorNumber(int suppressOperat
 
 void CannyDetectionAlgorithm::setConnection()
 {
-    connect(this, &CannyDetectionAlgorithm::inputImageChanged, &CannyDetectionAlgorithm::recalculate);
-    connect(this, &CannyDetectionAlgorithm::tMinChanged, &CannyDetectionAlgorithm::recalculate);
-    connect(this, &CannyDetectionAlgorithm::tMaxChanged, &CannyDetectionAlgorithm::recalculate);
-    connect(this, &CannyDetectionAlgorithm::sigmaChanged, &CannyDetectionAlgorithm::recalculate);
-    connect(this, &CannyDetectionAlgorithm::supressOperatorNumberChanged, &CannyDetectionAlgorithm::recalculate);
+    connect(this, &CannyDetectionAlgorithm::inputImageChanged, &CannyDetectionAlgorithm::needRecalculation);
+    connect(this, &CannyDetectionAlgorithm::tMinChanged, &CannyDetectionAlgorithm::needRecalculation);
+    connect(this, &CannyDetectionAlgorithm::tMaxChanged, &CannyDetectionAlgorithm::needRecalculation);
+    connect(this, &CannyDetectionAlgorithm::sigmaChanged, &CannyDetectionAlgorithm::needRecalculation);
+    connect(this, &CannyDetectionAlgorithm::supressOperatorNumberChanged, &CannyDetectionAlgorithm::needRecalculation);
 }
 
 QImage CannyDetectionAlgorithm::getOutput() const
