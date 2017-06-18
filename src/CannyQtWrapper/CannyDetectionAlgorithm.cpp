@@ -80,11 +80,11 @@ void CannyDetectionAlgorithm::setCurrentSupressOperatorNumber(int suppressOperat
 
 void CannyDetectionAlgorithm::setConnection()
 {
-    connect(this, &CannyDetectionAlgorithm::inputImageChanged, &CannyDetectionAlgorithm::needRecalculation);
-    connect(this, &CannyDetectionAlgorithm::tMinChanged, &CannyDetectionAlgorithm::needRecalculation);
-    connect(this, &CannyDetectionAlgorithm::tMaxChanged, &CannyDetectionAlgorithm::needRecalculation);
-    connect(this, &CannyDetectionAlgorithm::sigmaChanged, &CannyDetectionAlgorithm::needRecalculation);
-    connect(this, &CannyDetectionAlgorithm::supressOperatorNumberChanged, &CannyDetectionAlgorithm::needRecalculation);
+    connect(this, &CannyDetectionAlgorithm::inputImageChanged, &CannyDetectionAlgorithm::recalculate);
+    connect(this, &CannyDetectionAlgorithm::tMinChanged, &CannyDetectionAlgorithm::recalculate);
+    connect(this, &CannyDetectionAlgorithm::tMaxChanged, &CannyDetectionAlgorithm::recalculate);
+    connect(this, &CannyDetectionAlgorithm::sigmaChanged, &CannyDetectionAlgorithm::recalculate);
+    connect(this, &CannyDetectionAlgorithm::supressOperatorNumberChanged, &CannyDetectionAlgorithm::recalculate);
 }
 
 QImage CannyDetectionAlgorithm::getOutput() const
