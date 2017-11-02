@@ -1,16 +1,13 @@
-language: cpp
-dist: trusty
-compiler:
-    - clang
-    - gcc
-os:
-    - linux
-before_install:    
-    - sudo add-apt-repository --yes ppa:beineri/opt-qt561-trusty
-    - sudo apt-get update -qq    
-    - sudo apt-get install qt56-meta-full
+language: python
+sudo: required
+
+services:
+    - docker
+  
+matrix:
+    include:
+        - env: 
+            - BUILD_IMAGE=razornd/mxe:qt5
+
 script:
-    - source /opt/qt56/bin/qt56-env.sh
-    - qmake -v
-    - qmake
-    - make all
+    docker run --rm -v $PWD:/build $BUILD_IMAGE cd build/ && i686-w64-mingw32.static-qmake-qt5 && make
