@@ -7,7 +7,7 @@
 TARGET = common
 TEMPLATE = lib
 QT = gui
-CONFIG += c++14
+CONFIG += c++14 shared
 
 DEFINES += COMMON_LIBRARY
 

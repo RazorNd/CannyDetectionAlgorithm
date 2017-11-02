@@ -7,6 +7,8 @@
 TARGET = CannyQtWrapper
 TEMPLATE = lib
 
+CONFIG += shared
+
 DEFINES += CANNYQTWRAPPER_LIBRARY
 
 SOURCES += \
