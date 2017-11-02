@@ -3,7 +3,7 @@
 
 #include "SupressOperator.h"
 
-class RobinsonOperator : public SupressOperator
+class COMMONSHARED_EXPORT RobinsonOperator : public SupressOperator
 {
     enum Direction
     {

@@ -3,7 +3,7 @@
 
 #include "PixelsMatrix.h"
 
-class SupressOperator
+class COMMONSHARED_EXPORT SupressOperator
 {
 public:
     virtual ~SupressOperator() = default;

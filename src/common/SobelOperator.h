@@ -3,7 +3,7 @@
 
 #include "SupressOperator.h"
 
-class SobelOperator : public SupressOperator
+class COMMONSHARED_EXPORT SobelOperator : public SupressOperator
 {
     // SupressOperator interface
 public:
