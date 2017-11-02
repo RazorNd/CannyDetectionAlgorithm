@@ -10,4 +10,4 @@ matrix:
             - BUILD_IMAGE=razornd/mxe:qt5
 
 script:
-    docker run --rm -v $PWD:/build $BUILD_IMAGE cd build/ && i686-w64-mingw32.static-qmake-qt5 && make
+    docker run --rm -v $PWD:/build $BUILD_IMAGE bash -c "cd build/ && i686-w64-mingw32.static-qmake-qt5 && make"
