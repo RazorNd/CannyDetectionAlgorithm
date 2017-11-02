@@ -1,6 +1,7 @@
 #ifndef UTIL_H
 #define UTIL_H
 
+#include <cmath>
 #include "PixelsMatrix.h"
 
 template<int KernelSize>
