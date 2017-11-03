@@ -16,7 +16,9 @@ TEMPLATE = app
 SOURCES += \
     tst_image_iterator.cpp
 
-unix|win32: LIBS += -L$$OUT_PWD/../../../src/common/ -lcommon
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../../common/release/ -lcommon
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../../common/debug/ -lcommon
+else:unix: LIBS += -L$$OUT_PWD/../../../common/ -lcommon
 
 INCLUDEPATH += $$PWD/../../../src/common
 DEPENDPATH += PWD/../../../src/common
