@@ -15,7 +15,7 @@ public:
     typedef size_t difference_type;
     typedef std::random_access_iterator_tag iterator_category;
 
-    ImagePixelIterator(const QImage *image);
+    explicit ImagePixelIterator(const QImage *image);
 
     ImagePixelIterator &operator ++ ();
     ImagePixelIterator &operator -- ();

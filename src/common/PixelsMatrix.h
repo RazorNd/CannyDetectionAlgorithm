@@ -16,7 +16,7 @@ public:
 
     const static pixel_t MAX_BRIGHTNESS = 255;
 
-    PixelsMatrix(QSize size);
+    explicit PixelsMatrix(QSize size);
     PixelsMatrix(PixelsMatrix &&) = default;
     PixelsMatrix(const PixelsMatrix &) = delete;
     PixelsMatrix &operator = (const PixelsMatrix &) = delete;

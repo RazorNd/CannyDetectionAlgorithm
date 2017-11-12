@@ -23,7 +23,7 @@ public:
 private:
     class GradientCalculator {
     public:
-        GradientCalculator(const QSize size);
+        explicit GradientCalculator(const QSize size);
 
         typedef std::vector<Direction> direction_vector;
         void operator() (const PixelsMatrix &in) const;
